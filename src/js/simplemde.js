@@ -801,9 +801,7 @@ function _replaceSelection(cm, active, startEnd, url) {
 		end = end.replace("#url#", url);
 	}
 	if(active) {
-		text = cm.getLine(startPoint.line);
-		start = text.slice(0, startPoint.ch);
-		end = text.slice(startPoint.ch);
+		text = cm.getSelection();
 		cm.replaceRange(start + end, {
 			line: startPoint.line,
 			ch: 0
